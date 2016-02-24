@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2016 at 12:48 AM
+-- Generation Time: Feb 24, 2016 at 01:18 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `coffeedatabase`
 --
+CREATE DATABASE IF NOT EXISTS `coffeedatabase` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `coffeedatabase`;
 
 -- --------------------------------------------------------
 
@@ -59,7 +61,8 @@ ALTER TABLE `beantypes`
 -- Indexes for table `coffeequeue`
 --
 ALTER TABLE `coffeequeue`
-  ADD PRIMARY KEY (`CoffeeID`);
+  ADD PRIMARY KEY (`CoffeeID`),
+  ADD KEY `BeanTypeID` (`BeanTypeID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -75,6 +78,16 @@ ALTER TABLE `beantypes`
 --
 ALTER TABLE `coffeequeue`
   MODIFY `CoffeeID` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `coffeequeue`
+--
+ALTER TABLE `coffeequeue`
+  ADD CONSTRAINT `coffeequeue_ibfk_1` FOREIGN KEY (`BeanTypeID`) REFERENCES `beantypes` (`BeanTypeID`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
