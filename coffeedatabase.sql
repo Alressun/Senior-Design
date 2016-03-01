@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2016 at 01:18 AM
+-- Generation Time: Mar 01, 2016 at 10:39 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -41,10 +41,10 @@ CREATE TABLE IF NOT EXISTS `beantypes` (
 
 CREATE TABLE IF NOT EXISTS `coffeequeue` (
   `CoffeeID` int(10) unsigned NOT NULL,
-  `FirstName` varchar(50) NOT NULL,
-  `LastName` varchar(50) NOT NULL,
   `BeanTypeID` int(10) unsigned NOT NULL,
-  `Email` varchar(250) NOT NULL
+  `Email` varchar(250) NOT NULL,
+  `StartTime` datetime NOT NULL,
+  `Finished` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
