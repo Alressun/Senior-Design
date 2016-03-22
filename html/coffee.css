@@ -1,0 +1,36 @@
+.sidebar {
+	background-color: cadetblue; /*#5f9ea0*/
+}
+
+ul {
+	min-height: 95%;
+}
+
+ul > li {
+	padding: 10px 10px;
+	color: white;
+}
+
+ul > li > a {
+	color: white;
+}
+
+.body {
+	min-height: 95%;
+	background-color: white;
+}
+
+.header {
+	background-color: orange;
+}
+
+.header a{
+	color: #275d8b;
+}
+.header a:hover {
+	text-decoration: none;
+}
+
+.footer {
+	background-color: teal;
+}
